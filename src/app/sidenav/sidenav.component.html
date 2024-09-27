@@ -1,0 +1,26 @@
+<div class="sidenav" [ngClass]="{'is-collapsed': isCollapsed}">
+    <button class="toggle-btn" (click)="toggleSidenav()">
+      <i class="fa fa-bars"></i>
+    </button>
+    <a href="#">
+      <i class="fa fa-home"></i>
+      <span *ngIf="!isCollapsed">Dashboard</span>
+      <span *ngIf="isCollapsed" class="icon-text">Dashboard</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-user"></i>
+      <span *ngIf="!isCollapsed">Deals</span>
+      <span *ngIf="isCollapsed" class="icon-text">Deals</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-chart-line"></i>
+      <span *ngIf="!isCollapsed">Reports</span>
+      <span *ngIf="isCollapsed" class="icon-text">Reports</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-cogs"></i>
+      <span *ngIf="!isCollapsed">Config</span>
+      <span *ngIf="isCollapsed" class="icon-text">Config</span>
+    </a>
+  </div>
+  

@@ -1,6 +1,21 @@
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { AppComponent } from './app/app.component'; // Adjust the path if necessary
+import { RouterModule } from '@angular/router'; // Import RouterModule for routing
+import { importProvidersFrom } from '@angular/core';
+import { HomeComponent } from './app/home/home.component'; // Adjust the path as necessary
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+
+// import { environment } from './environments/environment'; // Import environment if needed
+
+// if (environment.production) {
+//   enableProdMode();
+// }
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(RouterModule.forRoot([
+      { path: '', component: HomeComponent }, // Define your home route here
+    ]))
+  ]
+}).catch(err => console.error(err));
