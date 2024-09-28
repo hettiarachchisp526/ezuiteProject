@@ -1,0 +1,72 @@
+<div class="deal-page-header">
+    <button class="download-btn" (click)="downloadFile()">Download</button>
+    <button class="new-deal-btn" (click)="openNewDealForm()">New Deal</button>
+  </div>
+  
+  <!-- Modal for the New Deal form -->
+  <div class="modal" *ngIf="showNewDealForm">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closeNewDealForm()">&times;</span>
+      <h2>Create New Deal</h2>
+      <form>
+        <label for="dealSize">Deal Size:</label>
+        <input type="text" id="dealSize" [(ngModel)]="newDeal.size" name="dealSize">
+        <label for="dealCategory">Deal Category:</label>
+        <input type="text" id="dealCategory" [(ngModel)]="newDeal.category" name="dealCategory">
+        <label for="dealEmployee">Deal Employee:</label>
+        <input type="text" id="dealEmployee" [(ngModel)]="newDeal.employee" name="dealEmployee">
+        <label for="dealLocation">Deal Location:</label>
+        <input type="text" id="dealLocation" [(ngModel)]="newDeal.location" name="dealLocation">
+        <label for="pipeline">Pipeline:</label>
+        <input type="text" id="pipeline" [(ngModel)]="newDeal.pipeline" name="pipeline">
+        <label for="stage">Stage:</label>
+        <input type="text" id="stage" [(ngModel)]="newDeal.stage" name="stage">
+        <button type="button" (click)="saveNewDeal()">Save Deal</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="search-bar-container">
+    <input type="text" class="search-bar" placeholder="Search Deals..." [(ngModel)]="searchTerm">
+  </div>
+  
+  <!-- Table for displaying deals -->
+  <table>
+    <thead>
+      <tr>
+        <th>Deal Size</th>
+        <th>Deal Category</th>
+        <th>Deal Employee</th>
+        <th>Deal Location</th>
+        <th>Pipeline</th>
+        <th>Stage</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let deal of filteredDeals()">
+        <td>{{ deal.size }}</td>
+        <td>{{ deal.category }}</td>
+        <td>{{ deal.employee }}</td>
+        <td>{{ deal.location }}</td>
+        <td>{{ deal.pipeline }}</td>
+        <td>{{ deal.stage }}</td>
+        <td>{{ deal.lastUpdate }}</td>
+        <td>
+            <button class="action-btn read-btn" (click)="viewDeal(deal)">
+              <i class="fas fa-eye"></i> <!-- Eye icon for Read -->
+            </button>
+            <button class="action-btn edit-btn" (click)="editDeal(deal)">
+              <i class="fas fa-edit"></i> <!-- Edit icon -->
+            </button>
+            <button class="action-btn delete-btn" (click)="deleteDeal(deal)">
+              <i class="fas fa-trash-alt"></i> <!-- Trash icon for Delete -->
+            </button>
+          </td>
+          
+          
+      </tr>
+    </tbody>
+  </table>
+  

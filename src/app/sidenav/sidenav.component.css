@@ -8,7 +8,7 @@
     overflow-x: hidden;
     padding-top: 20px;
     transition: width 0.3s; /* Transition effect */
-    margin-top: 65px;
+    margin-top: 55px;
   }
   
   .sidenav.is-collapsed {
@@ -43,9 +43,12 @@
     cursor: pointer;
     display: block;
   }
-  
+
   .sidenav a:hover {
     background-color: #4a69bb; /* Lighter background on hover */
+  }
+  .sidenav a:active{
+    background-color: #4a69bb;
   }
   
   /* Responsive adjustments */

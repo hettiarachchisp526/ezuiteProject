@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { SidenavComponent } from './sidenav/sidenav.component'; // Adjust path if necessary
-import { RouterOutlet } from '@angular/router'; // Import RouterOutlet for routing
-import { TopNavbarComponent } from './top-navbar/top-navbar.component';
+import { TopNavbarComponent } from './top-navbar/top-navbar.component'; // Adjust the path
+import { SidenavComponent } from './sidenav/sidenav.component'; // Adjust the path
+import { RouterOutlet } from '@angular/router'; // Import RouterOutlet
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [SidenavComponent, RouterOutlet, TopNavbarComponent], // Include your components here
+  imports: [TopNavbarComponent, SidenavComponent, RouterOutlet], // Include RouterOutlet
 })
-export class AppComponent {
-  title = 'Your Application Title';
-}
+export class AppComponent {}

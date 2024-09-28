@@ -7,11 +7,11 @@
       <span *ngIf="!isCollapsed">Dashboard</span>
       <span *ngIf="isCollapsed" class="icon-text">Dashboard</span>
     </a>
-    <a href="#">
+    <a routerLink="/deals" routerLinkActive="active">
       <i class="fa fa-user"></i>
-      <span *ngIf="!isCollapsed">Deals</span>
-      <span *ngIf="isCollapsed" class="icon-text">Deals</span>
+      <span>Deals</span>
     </a>
+    
     <a href="#">
       <i class="fa fa-chart-line"></i>
       <span *ngIf="!isCollapsed">Reports</span>
