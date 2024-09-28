@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CBHB8yIWpNbZoYiZGPFzeXsxMYzvH8EVwGyYy8vNoSk=",
+  "Source": "ecrm",
+  "BasePath": "_content/ecrm",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
